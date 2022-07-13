@@ -8,6 +8,7 @@ namespace LAB3
 {
     internal class Item
     {
+        static List<Item> items = new List<Item>();
         public int number { get; set; }
         public string date { get; set; }
         public int SKU { get; set; }
@@ -17,9 +18,13 @@ namespace LAB3
 
         public void save()
         {
-            Console.WriteLine("Saved to the database");
+            items.Add(this);
         }
 
+        public static List<Item> getAllItems()
+        {
+            return items;
+        }
 
     }
 }

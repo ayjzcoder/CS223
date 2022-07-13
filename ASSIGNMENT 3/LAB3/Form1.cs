@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -30,18 +31,117 @@ namespace LAB3
         private void btn_add_Click(object sender, EventArgs e)
         {
             Item item = new Item();
-            item.number = Convert.ToInt32(txt_Number.Text);
+            try
+            {
+                item.number = Convert.ToInt32(txt_Number.Text);
+                errorProvider1.SetError(txt_Number, "");
+
+            }
+            catch (FormatException)
+            {
+                if (txt_Number.Text.Equals(""))
+                    errorProvider1.SetError(txt_Number, "Number Required");
+                else
+                    errorProvider1.SetError(txt_Number, "Integers Only");
+
+            }
+            Regex r = new Regex(@"^[0-9]{3}$");
+            try
+            {
+
+                item.SKU = Convert.ToInt32(txt_SKU.Text);
+                
+            }
+            catch (FormatException)
+            {
+              
+                if (txt_SKU.Text.Equals(""))
+                    errorProvider1.SetError(txt_SKU, "SKU Required");
+                else 
+                    errorProvider1.SetError(txt_SKU, "Integers Only");
+            }
+
+            try
+            {
+                item.quantity = Convert.ToInt32(txt_Qty.Text);
+                errorProvider1.SetError(txt_Qty, "");
+            }
+            catch (Exception)
+            {
+                if (txt_Qty.Text.Equals(""))
+                    errorProvider1.SetError(txt_Qty, "Quantity Required");
+                else
+                    errorProvider1.SetError(txt_Qty, "Integers Only");
+            }
+
+            try
+            {
+                item.price = Convert.ToInt32(txt_price.Text);
+                errorProvider1.SetError(txt_price, "");
+            }
+            catch (Exception)
+            {
+
+                if (txt_price.Text.Equals(""))
+                    errorProvider1.SetError(txt_price, "Price Required");
+                else
+                    errorProvider1.SetError(txt_price, "Integers Only");
+            }
+
             item.date = date1.Text;
-            item.SKU= Convert.ToInt32((txt_SKU).Text);
             item.item_name = txt_ItemName.Text;
-            item.quantity= Convert.ToInt32(txt_Qty.Text);
-            item.price = Convert.ToDouble(txt_price.Text);
+         
 
-            Table.Rows.Add(item.number, item.item_name, item.quantity, item.price,item.date,item.SKU);
+            //Validate Empty Fields
+            if(txt_ItemName.Text.Equals(""))
+            {
+                errorProvider1.SetError(txt_ItemName, "Name Required");
+            }
+            else
+                errorProvider1.SetError(txt_ItemName, "");
 
-            item.save();
 
-            MessageBox.Show($"{item.item_name} Added Successfully");
+            if (!r.IsMatch(txt_SKU.Text))
+             errorProvider1.SetError(txt_SKU, "Only Three Digits");
+            else
+                errorProvider1.SetError(txt_SKU, "");
+
+
+            bool valid = false;
+
+            List<TextBox> list = new List<TextBox>() {
+                txt_Number,txt_ItemName,txt_price,txt_Qty,txt_SKU 
+            };
+           
+        
+            for (int i = 0; i < list.Count; i++)
+            {
+                if (!errorProvider1.GetError(list[i]).Equals(""))
+                {
+                    valid = false;
+                    break;
+
+                }
+                else
+                    valid = true;
+
+            }
+
+         
+            if (valid)
+            {
+
+                item.save();
+
+                Table.DataSource = null;
+                Table.DataSource = Item.getAllItems();
+                MessageBox.Show($"{item.item_name} Added Successfully");
+            }
+            //Table.Rows.Add(item.number, item.item_name, item.quantity, item.price,item.date,item.SKU);
+
+            
+
+            
         }
 
         private void btn_Cancel_Click(object sender, EventArgs e)
