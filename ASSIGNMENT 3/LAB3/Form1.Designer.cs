@@ -32,6 +32,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txt_Number = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.grpbox_payment = new System.Windows.Forms.GroupBox();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.Table = new System.Windows.Forms.DataGridView();
             this.date1 = new System.Windows.Forms.DateTimePicker();
             this.btn_Cancel = new System.Windows.Forms.Button();
@@ -46,7 +52,10 @@
             this.txt_ItemName = new System.Windows.Forms.TextBox();
             this.txt_SKU = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.grpbox_payment.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Table)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -54,15 +63,16 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(58, 44);
+            this.label1.Location = new System.Drawing.Point(58, 32);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Number";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txt_Number
             // 
-            this.txt_Number.Location = new System.Drawing.Point(61, 84);
+            this.txt_Number.Location = new System.Drawing.Point(61, 65);
             this.txt_Number.Name = "txt_Number";
             this.txt_Number.Size = new System.Drawing.Size(100, 20);
             this.txt_Number.TabIndex = 2;
@@ -70,6 +80,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.grpbox_payment);
+            this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.Table);
             this.panel1.Controls.Add(this.date1);
             this.panel1.Controls.Add(this.btn_Cancel);
@@ -87,15 +100,82 @@
             this.panel1.Controls.Add(this.txt_Number);
             this.panel1.Location = new System.Drawing.Point(-3, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(804, 452);
+            this.panel1.Size = new System.Drawing.Size(764, 452);
             this.panel1.TabIndex = 3;
+            // 
+            // grpbox_payment
+            // 
+            this.grpbox_payment.Controls.Add(this.radioButton4);
+            this.grpbox_payment.Controls.Add(this.radioButton3);
+            this.grpbox_payment.Location = new System.Drawing.Point(536, 153);
+            this.grpbox_payment.Name = "grpbox_payment";
+            this.grpbox_payment.Size = new System.Drawing.Size(216, 54);
+            this.grpbox_payment.TabIndex = 22;
+            this.grpbox_payment.TabStop = false;
+            this.grpbox_payment.Text = "Payment";
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Location = new System.Drawing.Point(115, 22);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(77, 17);
+            this.radioButton4.TabIndex = 1;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.Text = "Credit Card";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(6, 22);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(101, 17);
+            this.radioButton3.TabIndex = 0;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "Pay-On Delivery";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Controls.Add(this.radioButton2);
+            this.groupBox1.Location = new System.Drawing.Point(536, 92);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(216, 46);
+            this.groupBox1.TabIndex = 21;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Shipping";
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(6, 19);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(90, 17);
+            this.radioButton1.TabIndex = 19;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Free Shipping";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(115, 19);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(82, 17);
+            this.radioButton2.TabIndex = 20;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Quick Hour ";
+            this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // Table
             // 
             this.Table.AllowUserToAddRows = false;
             this.Table.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Table.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Table.Location = new System.Drawing.Point(61, 234);
+            this.Table.Location = new System.Drawing.Point(42, 231);
             this.Table.Name = "Table";
             this.Table.Size = new System.Drawing.Size(691, 150);
             this.Table.TabIndex = 16;
@@ -103,7 +183,7 @@
             // 
             // date1
             // 
-            this.date1.Location = new System.Drawing.Point(190, 84);
+            this.date1.Location = new System.Drawing.Point(188, 65);
             this.date1.Name = "date1";
             this.date1.Size = new System.Drawing.Size(200, 20);
             this.date1.TabIndex = 15;
@@ -149,7 +229,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(234, 44);
+            this.label4.Location = new System.Drawing.Point(234, 32);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(30, 13);
             this.label4.TabIndex = 10;
@@ -158,7 +238,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(409, 44);
+            this.label3.Location = new System.Drawing.Point(409, 32);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 13);
             this.label3.TabIndex = 9;
@@ -197,7 +277,7 @@
             // 
             // txt_SKU
             // 
-            this.txt_SKU.Location = new System.Drawing.Point(412, 84);
+            this.txt_SKU.Location = new System.Drawing.Point(412, 65);
             this.txt_SKU.Name = "txt_SKU";
             this.txt_SKU.Size = new System.Drawing.Size(308, 20);
             this.txt_SKU.TabIndex = 3;
@@ -205,6 +285,15 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(58, 8);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(55, 13);
+            this.label7.TabIndex = 23;
+            this.label7.Text = "Username";
             // 
             // Form1
             // 
@@ -216,6 +305,10 @@
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.grpbox_payment.ResumeLayout(false);
+            this.grpbox_payment.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Table)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
@@ -240,6 +333,13 @@
         private System.Windows.Forms.DateTimePicker date1;
         private System.Windows.Forms.DataGridView Table;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.GroupBox grpbox_payment;
+        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.Label label7;
     }
 }
 

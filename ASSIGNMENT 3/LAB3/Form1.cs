@@ -13,9 +13,11 @@ namespace LAB3
 {
     public partial class Form1 : Form
     {
-        public Form1()
+        public Form1(String user)
         {
+          
             InitializeComponent();
+            label7.Text = user;
         }
 
         private void btn1_Click(object sender, EventArgs e)
@@ -30,7 +32,14 @@ namespace LAB3
 
         private void btn_add_Click(object sender, EventArgs e)
         {
+
             Item item = new Item();
+
+           
+                
+            
+            
+
             try
             {
                 item.number = Convert.ToInt32(txt_Number.Text);
@@ -50,8 +59,8 @@ namespace LAB3
             {
 
                 item.SKU = Convert.ToInt32(txt_SKU.Text);
-                
-            }
+
+                ;            }
             catch (FormatException)
             {
               
@@ -90,10 +99,16 @@ namespace LAB3
 
             item.date = date1.Text;
             item.item_name = txt_ItemName.Text;
-         
+
+            item.payment = grpbox_payment.Text;
+            item.shipping = groupBox1.Text;
+
+
+
+
 
             //Validate Empty Fields
-            if(txt_ItemName.Text.Equals(""))
+            if (txt_ItemName.Text.Equals(""))
             {
                 errorProvider1.SetError(txt_ItemName, "Name Required");
             }
@@ -135,6 +150,10 @@ namespace LAB3
 
                 Table.DataSource = null;
                 Table.DataSource = Item.getAllItems();
+
+                String message = "";
+               
+                MessageBox.Show(message);
                 MessageBox.Show($"{item.item_name} Added Successfully");
             }
             //Table.Rows.Add(item.number, item.item_name, item.quantity, item.price,item.date,item.SKU);
@@ -150,6 +169,16 @@ namespace LAB3
         }
 
         private void Table_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

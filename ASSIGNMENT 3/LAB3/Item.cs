@@ -16,6 +16,13 @@ namespace LAB3
         public int quantity { get; set; }
         public double price { get; set; }
 
+        public bool isAvailable { get; set; }
+
+        public string shipping{ get; set; }
+
+        public string payment { get; set; } 
+
+
         public void save()
         {
             items.Add(this);
