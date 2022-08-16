@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace LAB3
 {
-    public partial class Form1 : Form
+    public partial class AddProduct : Form
     {
-        public Form1(String user)
+        public AddProduct(String user)
         {
           
             InitializeComponent();
@@ -40,20 +40,7 @@ namespace LAB3
             
             
 
-            try
-            {
-                item.number = Convert.ToInt32(txt_Number.Text);
-                errorProvider1.SetError(txt_Number, "");
-
-            }
-            catch (FormatException)
-            {
-                if (txt_Number.Text.Equals(""))
-                    errorProvider1.SetError(txt_Number, "Number Required");
-                else
-                    errorProvider1.SetError(txt_Number, "Integers Only");
-
-            }
+            
             Regex r = new Regex(@"^[0-9]{3}$");
             try
             {
@@ -148,8 +135,7 @@ namespace LAB3
 
                 item.save();
 
-                Table.DataSource = null;
-                Table.DataSource = Item.getAllItems();
+               
 
                 String message = "";
                
@@ -179,6 +165,11 @@ namespace LAB3
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
         {
 
         }

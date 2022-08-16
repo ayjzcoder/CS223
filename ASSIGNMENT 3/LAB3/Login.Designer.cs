@@ -30,17 +30,18 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lbl_password = new System.Windows.Forms.Label();
-            this.txt_username = new System.Windows.Forms.TextBox();
-            this.txt_password = new System.Windows.Forms.TextBox();
-            this.btn_login = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.btn_login = new System.Windows.Forms.Button();
+            this.txt_password = new System.Windows.Forms.TextBox();
+            this.txt_username = new System.Windows.Forms.TextBox();
+            this.lbl_password = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(111)))), ((int)(((byte)(114)))));
             this.panel1.Location = new System.Drawing.Point(1, 1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 286);
@@ -48,6 +49,7 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(157)))), ((int)(((byte)(156)))));
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.btn_login);
             this.panel2.Controls.Add(this.txt_password);
@@ -59,56 +61,63 @@
             this.panel2.Size = new System.Drawing.Size(209, 286);
             this.panel2.TabIndex = 1;
             // 
-            // label1
+            // label3
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 88);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Username";
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(220)))), ((int)(((byte)(207)))));
+            this.label3.Location = new System.Drawing.Point(97, 38);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(33, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Login";
+            // 
+            // btn_login
+            // 
+            this.btn_login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(111)))), ((int)(((byte)(114)))));
+            this.btn_login.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(235)))), ((int)(((byte)(227)))));
+            this.btn_login.Location = new System.Drawing.Point(75, 222);
+            this.btn_login.Name = "btn_login";
+            this.btn_login.Size = new System.Drawing.Size(75, 23);
+            this.btn_login.TabIndex = 4;
+            this.btn_login.Text = "Login";
+            this.btn_login.UseVisualStyleBackColor = false;
+            this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
+            // 
+            // txt_password
+            // 
+            this.txt_password.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(235)))), ((int)(((byte)(227)))));
+            this.txt_password.Location = new System.Drawing.Point(30, 173);
+            this.txt_password.Name = "txt_password";
+            this.txt_password.Size = new System.Drawing.Size(168, 20);
+            this.txt_password.TabIndex = 3;
+            // 
+            // txt_username
+            // 
+            this.txt_username.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(235)))), ((int)(((byte)(227)))));
+            this.txt_username.Location = new System.Drawing.Point(30, 105);
+            this.txt_username.Name = "txt_username";
+            this.txt_username.Size = new System.Drawing.Size(168, 20);
+            this.txt_username.TabIndex = 2;
             // 
             // lbl_password
             // 
             this.lbl_password.AutoSize = true;
+            this.lbl_password.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(220)))), ((int)(((byte)(207)))));
             this.lbl_password.Location = new System.Drawing.Point(27, 144);
             this.lbl_password.Name = "lbl_password";
             this.lbl_password.Size = new System.Drawing.Size(53, 13);
             this.lbl_password.TabIndex = 1;
             this.lbl_password.Text = "Password";
             // 
-            // txt_username
+            // label1
             // 
-            this.txt_username.Location = new System.Drawing.Point(30, 105);
-            this.txt_username.Name = "txt_username";
-            this.txt_username.Size = new System.Drawing.Size(168, 20);
-            this.txt_username.TabIndex = 2;
-            // 
-            // txt_password
-            // 
-            this.txt_password.Location = new System.Drawing.Point(30, 173);
-            this.txt_password.Name = "txt_password";
-            this.txt_password.Size = new System.Drawing.Size(168, 20);
-            this.txt_password.TabIndex = 3;
-            // 
-            // btn_login
-            // 
-            this.btn_login.Location = new System.Drawing.Point(75, 222);
-            this.btn_login.Name = "btn_login";
-            this.btn_login.Size = new System.Drawing.Size(75, 23);
-            this.btn_login.TabIndex = 4;
-            this.btn_login.Text = "Login";
-            this.btn_login.UseVisualStyleBackColor = true;
-            this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(97, 38);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(33, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Login";
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(220)))), ((int)(((byte)(207)))));
+            this.label1.Location = new System.Drawing.Point(27, 88);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Username";
             // 
             // Login
             // 

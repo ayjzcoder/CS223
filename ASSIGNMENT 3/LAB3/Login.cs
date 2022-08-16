@@ -16,22 +16,33 @@ namespace LAB3
         {
             InitializeComponent();
         }
-
+        
         private void btn_login_Click(object sender, EventArgs e)
         {
             string username = txt_username.Text;
             string password = txt_password.Text;
             if(username.Equals("admin") && password.Equals("admin"))
             {
-              new Form1(username).Show();
-             
-                this.Hide();
+                // new Form1(username).Show();
+                
+                
+
                
+                
+
+                this.Hide();
+                ContainerPage containerPage = new ContainerPage();
+                containerPage.Closed += (s, args) => this.Close();
+                containerPage.Show();
+
+
             }
             else
             {
                 MessageBox.Show("Error");
             }
         }
+                
+
     }
 }

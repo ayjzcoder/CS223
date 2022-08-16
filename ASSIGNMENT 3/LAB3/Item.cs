@@ -9,7 +9,7 @@ namespace LAB3
     internal class Item
     {
         static List<Item> items = new List<Item>();
-        public int number { get; set; }
+        public int Id { get; set; }
         public string date { get; set; }
         public int SKU { get; set; }
         public string item_name { get; set; }
@@ -32,6 +32,15 @@ namespace LAB3
         {
             return items;
         }
+
+        public static List<Item> search(string name)
+        {
+            return items.FindAll(item => item.item_name.ToLower() == name.ToLower());
+
+           
+        }
+       
+        
 
     }
 }
