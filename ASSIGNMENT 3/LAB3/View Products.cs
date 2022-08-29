@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace LAB3
 {
@@ -15,9 +16,9 @@ namespace LAB3
         public View_Products()
         {
             InitializeComponent();
-
-            bunifuDataGridView1.DataSource = null;
-            bunifuDataGridView1.DataSource = Item.getAllItems();
+            Database.Load();
+            bunifuDataGridView2.DataSource = null;
+            bunifuDataGridView2.DataSource = Item.getAllItems();
 
         }
 
@@ -27,16 +28,27 @@ namespace LAB3
         }
 
         private void View_Products_Load(object sender, EventArgs e)
-        {
+        {  /*
             foreach (var item in Item.getAllItems())
             {
-                UserControl1 userControl1 =    new UserControl1();
-                userControl1.ItemName = item.item_name;
-                userControl1.Quantity = item.quantity;
-                userControl1.Price = item.price.ToString();
+                ProductCard productcard =    new ProductCard();
+                productcard.ItemName = item.item_name;
+                productcard.Quantity = item.quantity;
+                productcard.Price = item.price.ToString();
+
+                productcard.Click += (object s, EventArgs ex)=>{
+                    MessageBox.Show($"Product name: {item.item_name}\nQuantity: {item.quantity}");
+
+                }
 ;
-                flowLayoutPanel1.Controls.Add( userControl1);
-            }
+                flowLayoutPanel1.Controls.Add( productcard);
+            }*/
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+           
+
         }
     }
 }

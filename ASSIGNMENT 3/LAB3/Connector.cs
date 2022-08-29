@@ -11,7 +11,7 @@ namespace LAB3
     {
        
         public static SqlConnection ConnectDb() {
-            string ConString = @"Data Source=.\SQLEXPRESS;Initial Catalog=TestDB;Integrated Security=True";
+            string ConString = @"Data Source=.\SQLEXPRESS;Initial Catalog = LABDATA;Integrated Security=True";
             SqlConnection con = new SqlConnection(ConString);
             return con;
         }

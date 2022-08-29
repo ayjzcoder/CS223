@@ -18,7 +18,7 @@ namespace LAB3
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            string ConString = @"Data Source=.\SQLEXPRESS;Initial Catalog=TestDB;Integrated Security=True";
+            /*string ConString = @"Data Source=.\SQLEXPRESS;Initial Catalog=TestDB;Integrated Security=True";
             SqlConnection con = new SqlConnection(ConString);
             string querystring = "Select * from Student";
             con.Open();
@@ -27,8 +27,8 @@ namespace LAB3
             while (reader.Read())
             {
                 Console.WriteLine(reader[0].ToString() + " " + reader[1].ToString() + " " + reader[2].ToString());
-            }
-            Application.Run(new Login());
+            }*/
+            Application.Run(new ContainerPage());
         }
     }
 }

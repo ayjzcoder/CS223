@@ -72,6 +72,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CheckConnection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CheckConnection.Designer.cs">
+      <DependentUpon>CheckConnection.cs</DependentUpon>
+    </Compile>
     <Compile Include="Connector.cs" />
     <Compile Include="ContainerPage.cs">
       <SubType>Form</SubType>
@@ -85,14 +91,8 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="HomePage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HomePage.Designer.cs">
-      <DependentUpon>HomePage.cs</DependentUpon>
-    </Compile>
     <Compile Include="Item.cs" />
-    <Compile Include="Loader.cs" />
+    <Compile Include="Database.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,11 +107,11 @@
     <Compile Include="SearchProduct.Designer.cs">
       <DependentUpon>SearchProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControl1.cs">
+    <Compile Include="ProductCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl1.Designer.cs">
-      <DependentUpon>UserControl1.cs</DependentUpon>
+    <Compile Include="ProductCard.Designer.cs">
+      <DependentUpon>ProductCard.cs</DependentUpon>
     </Compile>
     <Compile Include="View Products.cs">
       <SubType>Form</SubType>
@@ -119,14 +119,14 @@
     <Compile Include="View Products.Designer.cs">
       <DependentUpon>View Products.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CheckConnection.resx">
+      <DependentUpon>CheckConnection.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ContainerPage.resx">
       <DependentUpon>ContainerPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HomePage.resx">
-      <DependentUpon>HomePage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -144,8 +144,8 @@
     <EmbeddedResource Include="SearchProduct.resx">
       <DependentUpon>SearchProduct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl1.resx">
-      <DependentUpon>UserControl1.cs</DependentUpon>
+    <EmbeddedResource Include="ProductCard.resx">
+      <DependentUpon>ProductCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View Products.resx">
       <DependentUpon>View Products.cs</DependentUpon>

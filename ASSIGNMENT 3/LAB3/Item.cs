@@ -8,7 +8,7 @@ namespace LAB3
 {
     internal class Item
     {
-        static List<Item> items = new List<Item>();
+        public static List<Item> items = new List<Item>();
         public int Id { get; set; }
         public string date { get; set; }
         public int SKU { get; set; }
@@ -25,6 +25,7 @@ namespace LAB3
 
         public void save()
         {
+            Database.Add(this);
             items.Add(this);
         }
 

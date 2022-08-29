@@ -27,6 +27,7 @@ namespace LAB3
             AddProduct form1 = new AddProduct("username");
             form1.MdiParent = this;
             form1.Show();
+            form1.Dock = DockStyle.Fill;
            
             
         }
@@ -46,6 +47,7 @@ namespace LAB3
             View_Products view_Products = new View_Products();
             view_Products.MdiParent = this;
             view_Products.Show();   
+            view_Products.Dock = DockStyle.Fill;
         }
 
         private void searchProductToolStripMenuItem_Click(object sender, EventArgs e)
